@@ -62,7 +62,25 @@ You can use the read_bci_data function in the [**dataloader.py**](https://github
 train_data, train_label, test_data, test_label = read_bci_data()
 ```
 
-![image](https://user-images.githubusercontent.com/44439517/149894100-82685e56-ee95-4f69-a9e2-961bdaaa0a1e.png)
+<p float="center">
+  <img src="https://user-images.githubusercontent.com/44439517/149894100-82685e56-ee95-4f69-a9e2-961bdaaa0a1e.png" width="800" title="training curve"/>
+</p>
+
+## Testing
+
+You can display the testing results in different models by using the following commands in combination with different activation functions. 
+The model checkpoint were in the [**checkpoint**](https://github.com/secondlevel/EEG-classification/tree/main/checkpoint) directory. 
+
+```bash=
+python model_testing.py
+```
+
+Then you will get the result like this, each of the values were accuracy.
+
+|             | ReLU      |LeakyReLU |ELU       |
+|-------------|-----------|----------|----------|
+| EEGNet      | 87.1296 %  | 88.2407 % | 87.2222 % |
+| DeepConvNet | 85.4630 %  | 84.0741 % | 83.7963 % |
 
 
 ##  Reference
