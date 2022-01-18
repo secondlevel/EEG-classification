@@ -70,6 +70,25 @@ train_data, train_label, test_data, test_label = read_bci_data()
 
 ## Training
 
+```bash=
+python DeepConvNet_training_ELU.py
+```
+```bash=
+python DeepConvNet_training_LeakyReLU.py
+```
+```bash=
+python DeepConvNet_training_ReLU.py
+```
+```bash=
+python EEGNet_training_ELU.py
+```
+```bash=
+python EEGNet_training_LeakyReLU.py
+```
+```bash=
+python EEGNet_training_ReLU.py
+```
+
 <p float="center">
    <img src="https://user-images.githubusercontent.com/44439517/149902713-e4d82b0e-4d45-4a80-8100-d61090c24a32.png" width="800" title="EEGNet training curve"/>
 </p>
