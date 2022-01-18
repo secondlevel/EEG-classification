@@ -68,8 +68,11 @@ train_data, train_label, test_data, test_label = read_bci_data()
 
 ## Testing
 
-You can display the testing results in different models by using the following commands in combination with different activation functions. 
+You can display the testing results in different models by using the following commands in combination with different activation functions.
 The model checkpoint were in the [**checkpoint**](https://github.com/secondlevel/EEG-classification/tree/main/checkpoint) directory. 
+
+The detailed experimental result are in the following link. 
+https://github.com/secondlevel/EEG-classification/blob/main/Experiment%20Report.pdf
 
 ```bash=
 python model_testing.py
