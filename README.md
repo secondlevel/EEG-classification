@@ -81,7 +81,7 @@ https://github.com/secondlevel/EEG-classification/blob/main/Experiment%20Report.
 python model_testing.py
 ```
 
-Then you will get the result like this, each of the values were accuracy.
+Then you will get the best result like this, each of the values were accuracy.
 
 |             | ReLU      |LeakyReLU |ELU       |
 |-------------|-----------|----------|----------|
