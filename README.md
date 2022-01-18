@@ -38,14 +38,31 @@ $ pip install torchsummary
 - ### EEGNet  
 
 <p float="center">
-   <img src="https://user-images.githubusercontent.com/44439517/149887574-2e972ab3-77d4-4b2d-8329-f57b709e2e97.png" width="700" title="DeepConvNet architecture"/>
+   <img src="https://user-images.githubusercontent.com/44439517/149887574-2e972ab3-77d4-4b2d-8329-f57b709e2e97.png" width="500" title="DeepConvNet architecture"/>
 </p>
 
 - ### DeepConvNet
 
 <p float="center">
-  <img src="https://user-images.githubusercontent.com/44439517/149887186-927398ba-f909-4ce3-988a-68efd5f53036.png" width="700" title="DeepConvNet architecture"/>
+  <img src="https://user-images.githubusercontent.com/44439517/149887186-927398ba-f909-4ce3-988a-68efd5f53036.png" width="500" title="DeepConvNet architecture"/>
 </p>
+
+## Data Description
+
+In this project, the training and testing data were provided by [**BCI Competition III – IIIb**](http://www.bbci.de/competition/iii/desc_IIIb.pdf) and stored in the **[S4b_test.npz](https://github.com/secondlevel/EEG-classification/blob/main/S4b_test.npz), [S4b_train.npz](https://github.com/secondlevel/EEG-classification/blob/main/S4b_train.npz), [X11b_test.npz](https://github.com/secondlevel/EEG-classification/blob/main/X11b_test.npz) and [X11b_train.npz](https://github.com/secondlevel/EEG-classification/blob/main/X11b_train.npz)** file.  
+
+```bash=
+- Input: [Batch Size, 1, 2, 750]
+- Output: [Batch Size, 2]
+```
+
+You can use the read_bci_data function in the [**dataloader.py**](https://github.com/secondlevel/EEG-classification/blob/main/dataloader.py) file to obtain the training data, training label, testing data and testing label.
+
+```python=
+train_data, train_label, test_data, test_label = read_bci_data()
+```
+
+![image](https://user-images.githubusercontent.com/44439517/149894100-82685e56-ee95-4f69-a9e2-961bdaaa0a1e.png)
 
 
 ##  Reference
