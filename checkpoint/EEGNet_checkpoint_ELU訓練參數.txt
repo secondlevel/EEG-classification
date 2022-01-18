@@ -1,0 +1,6 @@
+epochs=700
+lr=1e-3
+optimizers=rmsprop(momentim=0.6)
+lossfunction = crossentropy
+loss = 0.038
+testing accuracy = 87.222%
