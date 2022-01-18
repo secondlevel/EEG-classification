@@ -70,23 +70,34 @@ train_data, train_label, test_data, test_label = read_bci_data()
 
 ## Training
 
+In the training step, the file were divided into six file.  
+
+Each file contains a different model architecture with a different activation. In addition, you can config the training parameters through the following argparse.
+
 ```bash=
-python DeepConvNet_training_ELU.py
+parser.add_argument('--epochs', type=int, default='700', help='training epochs')
+parser.add_argument('--learning_rate', type=float, default='1e-3', help='learning rate')
+parser.add_argument('--save_model', action='store_true', help='check if you want to save the model.')
+parser.add_argument('--save_csv', action='store_true', help='check if you want to save the training history.')
+```
+
+```bash=
+python DeepConvNet_training_ELU.py --epochs 3000 --learning_rate 1e-3 --save_model --save_csv
 ```
 ```bash=
-python DeepConvNet_training_LeakyReLU.py
+python DeepConvNet_training_LeakyReLU.py --epochs 3000 --learning_rate 1e-3 --save_model --save_csv
 ```
 ```bash=
-python DeepConvNet_training_ReLU.py
+python DeepConvNet_training_ReLU.py --epochs 3000 --learning_rate 1e-3 --save_model --save_csv
 ```
 ```bash=
-python EEGNet_training_ELU.py
+python EEGNet_training_ELU.py --epochs 700 --learning_rate 1e-3 --save_model --save_csv
 ```
 ```bash=
-python EEGNet_training_LeakyReLU.py
+python EEGNet_training_LeakyReLU.py --epochs 700 --learning_rate 1e-3 --save_model --save_csv
 ```
 ```bash=
-python EEGNet_training_ReLU.py
+python EEGNet_training_ReLU.py --epochs 700 --learning_rate 1e-3 --save_model --save_csv
 ```
 
 <p float="center">
@@ -110,7 +121,7 @@ https://github.com/secondlevel/EEG-classification/blob/main/Experiment%20Report.
 python model_testing.py
 ```
 
-Then you will get the best result like this, each of the values were accuracy.
+Then you will get the best result like this, each of the values were the testing accuracy.
 
 |             | ReLU      |LeakyReLU |ELU       |
 |-------------|-----------|----------|----------|
