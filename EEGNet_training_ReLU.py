@@ -17,6 +17,7 @@ import torch.optim as optim
 import pandas as pd
 from torchsummary import summary
 import os
+import argparse
 
 def testing(x_test,y_test,model,device,filepath):
 
@@ -41,6 +42,14 @@ def testing(x_test,y_test,model,device,filepath):
     return test_accuracy
 
 torch.manual_seed(1)    # reproducible
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--epochs', type=int, default='700', help='training epochs')
+parser.add_argument('--learning_rate', type=float, default='1e-3', help='learning rate')
+parser.add_argument('--save_model', action='store_true', help='check if you want to save the model.')
+parser.add_argument('--save_csv', action='store_true', help='check if you want to save the training history.')
+opt = parser.parse_args()
+
 epochs = 750
 lr = 1e-3
 
@@ -154,10 +163,11 @@ for epoch in range(epochs):
         
         if train_accuracy>max_accuracy:
             max_accuracy = train_accuracy
-            torch.save(model.state_dict(), filepath)
+            if opt.save_model:
+                torch.save(model.state_dict(), filepath)
 
 print("最大的Accuracy為:",max_accuracy,"最小的Loss值為:",min_loss)
 df = pd.DataFrame({"loss":loss_history,"train_accuracy_history":train_accuracy_history,"test_accuracy_history":test_accuracy_history})
-# print(df)
-df.to_csv(filepath_csv,encoding="utf-8-sig")
+if opt.save_csv:
+    df.to_csv(filepath_csv,encoding="utf-8-sig")
     
