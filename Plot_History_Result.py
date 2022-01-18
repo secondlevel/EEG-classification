@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
+import argparse
 import os
 
 def plot_loss_curve(DeepConvNet_ELU,DeepConvNet_ReLU,DeepConvNet_LeakyReLU,EEGNet_ELU,EEGNet_ReLU,EEGNet_LeakyReLU):
@@ -61,6 +62,12 @@ def plot_DeepConvNet_accuracy_curve(DeepConvNet_ELU,DeepConvNet_ReLU,DeepConvNet
 
 if __name__ == "__main__":
     
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--plot_loss_curve', action='store_true', help='check if you want to plot the loss curve.')
+    parser.add_argument('--plot_EEGNet_accuracy_curve', action='store_true', help='check if you want to plot the EEGNet accuracy curve.')
+    parser.add_argument('--plot_DeepConvNet_accuracy_curve', action='store_true', help='check if you want to plot the DeepConvNet accuracy curve.')
+    opt = parser.parse_args()
+
     path = os.path.abspath(os.path.dirname(__file__))+"/history_csv/"
 
     DeepConvNet_ELU = pd.DataFrame(pd.read_csv(path+"DeepConvNet_ELU.csv",encoding="utf-8-sig"))
@@ -70,8 +77,13 @@ if __name__ == "__main__":
     EEGNet_ELU = pd.DataFrame(pd.read_csv(path+"EEGNet_ELU.csv",encoding="utf-8-sig"))
     EEGNet_ReLU = pd.DataFrame(pd.read_csv(path+"EEGNet_ReLU.csv",encoding="utf-8-sig"))
     EEGNet_LeakyReLU = pd.DataFrame(pd.read_csv(path+"EEGNet_LeakyReLU.csv",encoding="utf-8-sig"))
-
-    # plot_loss_curve(DeepConvNet_ELU,DeepConvNet_ReLU,DeepConvNet_LeakyReLU,EEGNet_ELU,EEGNet_ReLU,EEGNet_LeakyReLU)
-    plot_EEGNet_accuracy_curve(DeepConvNet_ELU,DeepConvNet_ReLU,DeepConvNet_LeakyReLU,EEGNet_ELU,EEGNet_ReLU,EEGNet_LeakyReLU)
-    # plot_DeepConvNet_accuracy_curve(DeepConvNet_ELU,DeepConvNet_ReLU,DeepConvNet_LeakyReLU,EEGNet_ELU,EEGNet_ReLU,EEGNet_LeakyReLU)
+    
+    if opt.plot_loss_curve:
+        plot_loss_curve(DeepConvNet_ELU,DeepConvNet_ReLU,DeepConvNet_LeakyReLU,EEGNet_ELU,EEGNet_ReLU,EEGNet_LeakyReLU)
+    
+    if opt.plot_EEGNet_accuracy_curve:
+        plot_EEGNet_accuracy_curve(DeepConvNet_ELU,DeepConvNet_ReLU,DeepConvNet_LeakyReLU,EEGNet_ELU,EEGNet_ReLU,EEGNet_LeakyReLU)
+    
+    if opt.plot_DeepConvNet_accuracy_curve:
+        plot_DeepConvNet_accuracy_curve(DeepConvNet_ELU,DeepConvNet_ReLU,DeepConvNet_LeakyReLU,EEGNet_ELU,EEGNet_ReLU,EEGNet_LeakyReLU)
 
