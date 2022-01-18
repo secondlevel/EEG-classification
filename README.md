@@ -72,7 +72,9 @@ train_data, train_label, test_data, test_label = read_bci_data()
 
 In the training step, there provided six file to train different model.
 
-Each file contains a different model architecture with a different activation. In addition, you can config the training parameters through the following argparse.
+Each file contains a different model architecture with a different activation. In addition, you can config the training parameters through the following argparse, and use the following instructions to train different method.  
+
+Finally, you will get such training result. The first picture is about DeepConvNet, and the second picture is about EEGNet.
 
 ```bash=
 parser.add_argument('--epochs', type=int, default='700', help='training epochs')
@@ -81,45 +83,49 @@ parser.add_argument('--save_model', action='store_true', help='check if you want
 parser.add_argument('--save_csv', action='store_true', help='check if you want to save the training history.')
 ```
 
-### DeepConvNet with ELU
+- #### DeepConvNet with ELU
 
 ```bash=
 python DeepConvNet_training_ELU.py --epochs 3000 --learning_rate 1e-3 --save_model --save_csv
 ```
 
-### DeepConvNet with LeakyReLU
+- #### DeepConvNet with LeakyReLU
 
 ```bash=
 python DeepConvNet_training_LeakyReLU.py --epochs 3000 --learning_rate 1e-3 --save_model --save_csv
 ```
 
-### DeepConvNet with ReLU
+- #### DeepConvNet with ReLU
 
 ```bash=
 python DeepConvNet_training_ReLU.py --epochs 3000 --learning_rate 1e-3 --save_model --save_csv
 ```
 
-### EEGNet with ELU
+- #### EEGNet with ELU
 
 ```bash=
 python EEGNet_training_ELU.py --epochs 700 --learning_rate 1e-3 --save_model --save_csv
 ```
 
-### EEGNet with LeakyReLU
+- #### EEGNet with LeakyReLU
 
 ```bash=
 python EEGNet_training_LeakyReLU.py --epochs 700 --learning_rate 1e-3 --save_model --save_csv
 ```
 
-### EEGNet with ReLU
+- #### EEGNet with ReLU
 
 ```bash=
 python EEGNet_training_ReLU.py --epochs 700 --learning_rate 1e-3 --save_model --save_csv
 ```
 
+- #### DeepConvNet training curve
+
 <p float="center">
    <img src="https://user-images.githubusercontent.com/44439517/149902713-e4d82b0e-4d45-4a80-8100-d61090c24a32.png" width="800" title="EEGNet training curve"/>
 </p>
+
+- #### EEGNet training curve
 
 <p float="center">
    <img src="https://user-images.githubusercontent.com/44439517/149901329-097d1238-a1c4-4bf5-a078-bd42ea201a51.png" width="800" hspace="20" title="DeepConvNet training curve"/>
