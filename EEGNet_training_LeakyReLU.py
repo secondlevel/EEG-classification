@@ -17,6 +17,7 @@ import pandas as pd
 import torch.optim as optim
 from torchsummary import summary
 import os
+import argparse
 
 def plot_here_hustory(train_accuracy_history,test_accuracy_history,loss_history):
     
@@ -63,6 +64,13 @@ def testing(x_test,y_test,model,device,filepath):
         # print("testing accuracy:",correct/n)
 
     return test_accuracy
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--epochs', type=int, default='700', help='training epochs')
+parser.add_argument('--learning_rate', type=float, default='1e-3', help='learning rate')
+parser.add_argument('--save_model', action='store_true', help='check if you want to save the model.')
+parser.add_argument('--save_csv', action='store_true', help='check if you want to save the training history.')
+opt = parser.parse_args()
 
 torch.manual_seed(1)    # reproducible
 epochs = 700
@@ -181,7 +189,8 @@ for epoch in range(epochs):
         
         if train_accuracy>max_train_accuracy:
             max_train_accuracy = train_accuracy
-            torch.save(model.state_dict(), filepath)
+            if opt.save_model:
+                torch.save(model.state_dict(), filepath)
         
         if test_accuracy>max_test_accuracy:
             max_test_accuracy = test_accuracy
@@ -189,5 +198,5 @@ for epoch in range(epochs):
 print("最大的Training Accuracy為:",max_train_accuracy,"最大的Testing Accuracy為:",max_test_accuracy,"最小的Loss值為:",min_loss)
 plot_here_hustory(train_accuracy_history,test_accuracy_history,loss_history)
 df = pd.DataFrame({"loss":loss_history,"train_accuracy_history":train_accuracy_history,"test_accuracy_history":test_accuracy_history})
-# print(df)
-df.to_csv(filepath_csv,encoding="utf-8-sig")
+if opt.save_csv:
+    df.to_csv(filepath_csv,encoding="utf-8-sig")
