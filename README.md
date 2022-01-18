@@ -35,6 +35,8 @@ $ pip install torchsummary
 
 ## Model Architecture
 
+The model architecture that combines with different activation function was in the [**ALL_model.py**](https://github.com/secondlevel/EEG-classification/blob/main/ALL_model.py) file.
+
 - ### EEGNet  
 
 <p float="center">
