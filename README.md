@@ -70,7 +70,7 @@ train_data, train_label, test_data, test_label = read_bci_data()
 
 ## Training
 
-In the training step, the file were divided into six file.  
+In the training step, there provided six file to train different model.
 
 Each file contains a different model architecture with a different activation. In addition, you can config the training parameters through the following argparse.
 
@@ -81,21 +81,38 @@ parser.add_argument('--save_model', action='store_true', help='check if you want
 parser.add_argument('--save_csv', action='store_true', help='check if you want to save the training history.')
 ```
 
+### DeepConvNet with ELU
+
 ```bash=
 python DeepConvNet_training_ELU.py --epochs 3000 --learning_rate 1e-3 --save_model --save_csv
 ```
+
+### DeepConvNet with LeakyReLU
+
 ```bash=
 python DeepConvNet_training_LeakyReLU.py --epochs 3000 --learning_rate 1e-3 --save_model --save_csv
 ```
+
+### DeepConvNet with ReLU
+
 ```bash=
 python DeepConvNet_training_ReLU.py --epochs 3000 --learning_rate 1e-3 --save_model --save_csv
 ```
+
+### EEGNet with ELU
+
 ```bash=
 python EEGNet_training_ELU.py --epochs 700 --learning_rate 1e-3 --save_model --save_csv
 ```
+
+### EEGNet with LeakyReLU
+
 ```bash=
 python EEGNet_training_LeakyReLU.py --epochs 700 --learning_rate 1e-3 --save_model --save_csv
 ```
+
+### EEGNet with ReLU
+
 ```bash=
 python EEGNet_training_ReLU.py --epochs 700 --learning_rate 1e-3 --save_model --save_csv
 ```
