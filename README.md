@@ -75,7 +75,7 @@ train_data, train_label, test_data, test_label = read_bci_data()
 </p>
 
 <p float="center">
-   <img src="https://user-images.githubusercontent.com/44439517/149901329-097d1238-a1c4-4bf5-a078-bd42ea201a51.png" width="800" title="DeepConvNet training curve"/>
+   <img src="https://user-images.githubusercontent.com/44439517/149901329-097d1238-a1c4-4bf5-a078-bd42ea201a51.png" width="800" hspace="20" title="DeepConvNet training curve"/>
 </p>
 
 
