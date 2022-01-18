@@ -12,6 +12,7 @@ from torchsummary import summary
 from torchvision import transforms
 import pandas as pd
 import os
+import argparse
 
 def testing(x_test,y_test,model,device,filepath):
 
@@ -31,12 +32,18 @@ def testing(x_test,y_test,model,device,filepath):
         # print("testing accuracy:",correct/n)
     return correct/n
 
-
 def init_weights(m):
     if type(m) == nn.Linear:
         # torch.nn.init.uniform(m.weight)
         torch.nn.init.xavier_uniform(m.weight)
         m.bias.data.fill_(0.08)
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--epochs', type=int, default='3000', help='training epochs')
+parser.add_argument('--learning_rate', type=float, default='1e-3', help='learning rate')
+parser.add_argument('--save_model', action='store_true', help='check if you want to save the model.')
+parser.add_argument('--save_csv', action='store_true', help='check if you want to save the training history.')
+opt = parser.parse_args()
 
 train_data, train_label, test_data, test_label = read_bci_data()
 
@@ -44,8 +51,8 @@ filepath = os.path.abspath(os.path.dirname(__file__))+"\checkpoint\DeepConvNet_c
 filepath_csv = os.path.abspath(os.path.dirname(__file__))+"\history_csv\DeepConvNet_ELU.csv"
 
 n = train_data.shape[0]
-epochs = 3000
-lr = 1e-3
+epochs = opt.epochs
+lr = opt.learning_rate
 
 min_loss=1
 max_accuracy = 0
@@ -156,12 +163,13 @@ for epoch in range(epochs):
             min_loss = train_loss
             # torch.save(model.state_dict(), filepath)
         
-        
         if train_accuracy>max_accuracy:
             max_accuracy = train_accuracy
-            torch.save(model.state_dict(), filepath)
+            if opt.save_model:
+                torch.save(model.state_dict(), filepath)
 
 print("最大的Accuracy為:",max_accuracy,"最小的Loss值為:",min_loss)
 df = pd.DataFrame({"loss":loss_history,"train_accuracy_history":train_accuracy_history,"test_accuracy_history":test_accuracy_history})
-# print(df)
-df.to_csv(filepath_csv,encoding="utf-8-sig")
+
+if opt.save_csv:
+    df.to_csv(filepath_csv,encoding="utf-8-sig")
