@@ -16,9 +16,9 @@ https://github.com/secondlevel/EEG-classification/blob/main/Experiment%20Report.
 ## Hardware
 Operating System: Windows 10  
 
-CPU Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz  
+CPU: Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz  
 
-GPU 0 NVIDIA GeForce GTX TITAN X  
+GPU: NVIDIA GeForce GTX TITAN X  
 
 ## Requirement
 
