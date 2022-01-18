@@ -72,7 +72,7 @@ train_data, train_label, test_data, test_label = read_bci_data()
 
 In the training step, there provided six file to train different model.
 
-Each file contains a different model architecture with a different activation. In addition, you can config the training parameters through the following argparse, and use the following instructions to train different method.  
+Each file contains a different model architecture with a different activation function. In addition, you can config the training parameters through the following argparse, and use the following instructions to train different method.  
 
 Finally, you will get such training result. The first picture is about DeepConvNet, and the second picture is about EEGNet.  
 
