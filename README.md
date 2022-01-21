@@ -9,10 +9,6 @@ https://github.com/secondlevel/EEG-classification/blob/main/Experiment%20Report.
   <img src="https://user-images.githubusercontent.com/44439517/149881402-0e22521c-4d97-4717-b4ec-8ffa9d7ebae4.png" width="500" title="testing result"  hspace="40"/>
 </p>
 
-<p float="center">
-
-</p>
-
 ## Hardware
 Operating System: Windows 10  
 
