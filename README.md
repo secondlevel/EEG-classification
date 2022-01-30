@@ -150,11 +150,11 @@ Then you will get the best result like this, each of the values were the testing
 | EEGNet      | 87.1296 %  | 88.2407 % | 87.2222 % |
 | DeepConvNet | 85.4630 %  | 84.0741 % | 83.7963 % |
 
-## Loss Function
+### Loss Function
 
 In this project, I use two loss functions to train the classification model independently.
 
-### Mean Squared Error(MSE)
+#### Mean Squared Error(MSE)
 
 <p float="center">
   <img src="https://user-images.githubusercontent.com/44439517/151695030-61f1f71e-6fb6-498d-bee4-ef85a0b5d959.gif" title="Mean Squared Error(MSE)" width="200" />
@@ -166,7 +166,7 @@ In this project, I use two loss functions to train the classification model inde
 
 ---
 
-### Crossentropy
+#### Crossentropy
 
 <p float="center">
   <img src="https://user-images.githubusercontent.com/44439517/151697769-2a41096b-5af1-484a-baab-23ced39c2acb.png" title="Mean Squared Error(MSE)" width="180" />
@@ -177,11 +177,11 @@ In this project, I use two loss functions to train the classification model inde
 - y: binary indicator (0 or 1) if class label c is the correct classification for observation o
 - p: predicted probability observation o is of class c
 
-## Classification Metrics
+### Classification Metrics
 
 In this project, only **Accuracy** is used as the evaluation metric of the model. 
 
-### Accuracy
+#### Accuracy
 
 <p float="center">
   <img src="https://user-images.githubusercontent.com/44439517/151693558-d2ea220b-607b-41c3-9d03-e01d0682aaed.gif" title="Accuracy" width="300" />
