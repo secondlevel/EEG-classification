@@ -131,7 +131,6 @@ python EEGNet_training_ReLU.py --epochs 700 --learning_rate 1e-3 --save_model --
    <img src="https://user-images.githubusercontent.com/44439517/149901329-097d1238-a1c4-4bf5-a078-bd42ea201a51.png" width="800" hspace="20" title="DeepConvNet training curve"/>
 </p>
 
-
 ## Testing
 
 You can display the testing results in different models by using the following commands in combination with different activation functions.
@@ -150,6 +149,48 @@ Then you will get the best result like this, each of the values were the testing
 |-------------|-----------|----------|----------|
 | EEGNet      | 87.1296 %  | 88.2407 % | 87.2222 % |
 | DeepConvNet | 85.4630 %  | 84.0741 % | 83.7963 % |
+
+## Loss Function
+
+In this project, I use two loss functions to train the classification model independently.
+
+### Mean Squared Error(MSE)
+
+<p float="center">
+  <img src="https://user-images.githubusercontent.com/44439517/151695030-61f1f71e-6fb6-498d-bee4-ef85a0b5d959.gif" title="Mean Squared Error(MSE)" width="200" />
+</p>  
+
+- **y_j:** ground-truth value
+- **y_hat:** predicted value from the regression model
+- **N:** number of datums
+
+---
+
+### Crossentropy
+
+<p float="center">
+  <img src="https://user-images.githubusercontent.com/44439517/151697769-2a41096b-5af1-484a-baab-23ced39c2acb.png" title="Mean Squared Error(MSE)" width="180" />
+</p>  
+
+- M: number of classes
+- log: the natural log
+- y: binary indicator (0 or 1) if class label c is the correct classification for observation o
+- p: predicted probability observation o is of class c
+
+## Classification Metrics
+
+In this project, only **Accuracy** is used as the evaluation metric of the model. 
+
+### Accuracy
+
+<p float="center">
+  <img src="https://user-images.githubusercontent.com/44439517/151693558-d2ea220b-607b-41c3-9d03-e01d0682aaed.gif" title="Accuracy" width="300" />
+</p>    
+
+- **True Positive(TP)** signifies how many positive class samples your model predicted correctly.
+- **True Negative(TN)** signifies how many negative class samples your model predicted correctly.
+- **False Positive(FP)** signifies how many negative class samples your model predicted incorrectly. This factor represents Type-I error in statistical nomenclature. This error positioning in the confusion matrix depends on the choice of the null hypothesis.
+- **False Negative(FN)** signifies how many positive class samples your model predicted incorrectly. This factor represents Type-II error in statistical nomenclature. This error positioning in the confusion matrix also depends on the choice of the null hypothesis. 
 
 
 ##  Reference
