@@ -5,8 +5,8 @@ You can get some detailed introduction and experimental results in the link belo
 https://github.com/secondlevel/EEG-classification/blob/main/Experiment%20Report.pdf  
 
 <p float="center">
-  <img src="https://user-images.githubusercontent.com/44439517/149881111-c70eccd7-a0f4-4b6f-aae4-bef73b4814a4.png" width="338" title="training curve" hspace="20"/>
-  <img src="https://user-images.githubusercontent.com/44439517/149881402-0e22521c-4d97-4717-b4ec-8ffa9d7ebae4.png" width="500" title="testing result"  hspace="40"/>
+  <img src="https://user-images.githubusercontent.com/44439517/149881111-c70eccd7-a0f4-4b6f-aae4-bef73b4814a4.png" width="40%" height="40%" title="training curve" hspace="20"/>
+  <img src="https://user-images.githubusercontent.com/44439517/149881402-0e22521c-4d97-4717-b4ec-8ffa9d7ebae4.png" width="40%" height="40%" title="testing result"  hspace="30"/>
 </p>
 
 ## Hardware
