@@ -1,4 +1,4 @@
-# EEG-classification (Summer Course homework 2)
+# EEG-classification (Deep Learning and Practice homework 2)
 The task is to classify BCI competition datasets(EEG signals) by using EEGNet and DeepConvNet with different activation functions. I have built EEGNet and DeepConvNet by using **pytorch**.
 
 You can get some detailed introduction and experimental results in the link below.  
