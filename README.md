@@ -119,8 +119,7 @@ Each file contains a different model architecture with a different activation fu
 
 Finally, you will get such training result. The first picture is about DeepConvNet, and the second picture is about EEGNet.  
 
-You can get some detailed introduction and experimental results in the link below.  
-https://github.com/secondlevel/EEG-classification/blob/main/Experiment%20Report.pdf 
+You can get some detailed introduction and experimental results in this [link](https://github.com/secondlevel/EEG-classification/blob/main/Experiment%20Report.pdf).   
 
 ```bash=
 parser.add_argument('--epochs', type=int, default='700', help='training epochs')
