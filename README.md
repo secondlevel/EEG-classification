@@ -1,8 +1,7 @@
 # EEG-classification (Deep Learning and Practice homework 2)
 The task is to classify BCI competition datasets(EEG signals) by using EEGNet and DeepConvNet with different activation functions. I have built EEGNet and DeepConvNet by using **pytorch**.
 
-You can get some detailed introduction and experimental results in the link below.  
-https://github.com/secondlevel/EEG-classification/blob/main/Experiment%20Report.pdf  
+You can get some detailed introduction and experimental results in this [link](https://github.com/secondlevel/EEG-classification/blob/main/Experiment%20Report.pdf ).   
 
 <p float="center">
   <img src="https://user-images.githubusercontent.com/44439517/149881111-c70eccd7-a0f4-4b6f-aae4-bef73b4814a4.png" width="40%" height="40%" title="training curve" hspace="20"/>
@@ -128,49 +127,49 @@ parser.add_argument('--save_model', action='store_true', help='check if you want
 parser.add_argument('--save_csv', action='store_true', help='check if you want to save the training history.')
 ```
 
-#### DeepConvNet with ELU
+### DeepConvNet with ELU
 
 ```bash=
 python DeepConvNet_training_ELU.py --epochs 3000 --learning_rate 1e-3 --save_model --save_csv
 ```
 
-#### DeepConvNet with LeakyReLU
+### DeepConvNet with LeakyReLU
 
 ```bash=
 python DeepConvNet_training_LeakyReLU.py --epochs 3000 --learning_rate 1e-3 --save_model --save_csv
 ```
 
-- #### DeepConvNet with ReLU
+### DeepConvNet with ReLU
 
 ```bash=
 python DeepConvNet_training_ReLU.py --epochs 3000 --learning_rate 1e-3 --save_model --save_csv
 ```
 
-#### EEGNet with ELU
+### EEGNet with ELU
 
 ```bash=
 python EEGNet_training_ELU.py --epochs 700 --learning_rate 1e-3 --save_model --save_csv
 ```
 
-#### EEGNet with LeakyReLU
+### EEGNet with LeakyReLU
 
 ```bash=
 python EEGNet_training_LeakyReLU.py --epochs 700 --learning_rate 1e-3 --save_model --save_csv
 ```
 
-#### EEGNet with ReLU
+### EEGNet with ReLU
 
 ```bash=
 python EEGNet_training_ReLU.py --epochs 700 --learning_rate 1e-3 --save_model --save_csv
 ```
 
-#### DeepConvNet training curve
+### DeepConvNet training curve
 
 <p float="center">
    <img src="https://user-images.githubusercontent.com/44439517/149902713-e4d82b0e-4d45-4a80-8100-d61090c24a32.png" width="800" title="EEGNet training curve"/>
 </p>
 
-#### EEGNet training curve
+### EEGNet training curve
 
 <p float="center">
    <img src="https://user-images.githubusercontent.com/44439517/149901329-097d1238-a1c4-4bf5-a078-bd42ea201a51.png" width="800" hspace="20" title="DeepConvNet training curve"/>
