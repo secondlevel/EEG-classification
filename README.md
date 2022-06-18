@@ -53,14 +53,14 @@ The model architecture that combines with different activation function was in t
 
 ## Data Description
 
-In this project, the training and testing data were provided by [**BCI Competition III – IIIb**](http://www.bbci.de/competition/iii/desc_IIIb.pdf) and stored in the **[S4b_test.npz](https://github.com/secondlevel/EEG-classification/blob/main/S4b_test.npz), [S4b_train.npz](https://github.com/secondlevel/EEG-classification/blob/main/S4b_train.npz), [X11b_test.npz](https://github.com/secondlevel/EEG-classification/blob/main/X11b_test.npz) and [X11b_train.npz](https://github.com/secondlevel/EEG-classification/blob/main/X11b_train.npz)** file.  
+In this project, the training and testing data were provided by [**BCI Competition III – IIIb**](http://www.bbci.de/competition/iii/desc_IIIb.pdf).  
 
 ```bash=
 Data: [Batch Size, 1, 2, 750]
 Label: [Batch Size, 2]
 ```
 
-You can use the read_bci_data function in the [**dataloader.py**](https://github.com/secondlevel/EEG-classification/blob/main/dataloader.py) file to obtain the training data, training label, testing data and testing label.
+You can use the read_bci_data function in the **dataloader.py** file to obtain the training data, training label, testing data and testing label.
 
 ```python=
 train_data, train_label, test_data, test_label = read_bci_data()
