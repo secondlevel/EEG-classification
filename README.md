@@ -180,8 +180,7 @@ python EEGNet_training_ReLU.py --epochs 700 --learning_rate 1e-3 --save_model --
 You can display the testing results in different models by using the following commands in combination with different activation functions.
 The model checkpoint were in the [**checkpoint**](https://github.com/secondlevel/EEG-classification/tree/main/checkpoint) directory. 
 
-The detailed experimental result are in the following link.  
-https://github.com/secondlevel/EEG-classification/blob/main/Experiment%20Report.pdf
+The detailed experimental result are in the [link](https://github.com/secondlevel/EEG-classification/blob/main/Experiment%20Report.pdf).  
 
 ```bash=
 python model_testing.py
